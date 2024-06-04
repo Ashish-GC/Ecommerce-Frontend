@@ -1,0 +1,74 @@
+.modal{
+max-width: inherit;
+width: 100%;
+height: 30%;
+position: absolute;
+top: 0;
+background-color: white;
+padding: 1rem;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+z-index: 30;
+animation: slideIn 400ms ease-out forwards;
+}
+
+.modal::backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideIn {
+     from{
+     opacity: 0;
+     transform: translateY(-3rem);
+     }
+     to{
+        opacity: 1;
+        transform: translateY(0);
+     }
+}
+
+
+
+.modalContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1.5rem;
+}
+.searchBar{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchBar input{
+    border: none;
+    border-bottom: 1px solid #e3e7e8;
+    background: transparent;
+    padding-right: 0;
+    padding-left: 10px;
+    font-size: 150%;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+.searchBar input:focus{
+    outline: none;
+    border-bottom: 1px solid black;
+}
+.searchIcon{
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+.searchIcon:hover{
+    color: red;
+}
+
+.closeButton{
+    position: absolute;
+    top: 10px;
+    right: 1rem;
+    cursor: pointer;
+    }

@@ -1,19 +1,17 @@
 .main{
-     width: 100dvw;
-     height: 100dvh;
-     /* border: 2px solid red; */
+     width: 100%;
+     height: 100%;
      display: flex;
      flex-direction: column;
      position: relative;
+
 }
 .nav{
       flex: 14%;
       display: flex;
-      /* position: unset; */
 }
 .content{
     flex: 86%;
-    /* border: 2px solid red; */
 }
 .timer{
     position: absolute;
