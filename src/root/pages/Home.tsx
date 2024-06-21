@@ -1,9 +1,136 @@
-import React from 'react'
+import ProductCard from '@/components/shared/ProductCard/ProductCard'
+import classes from './Home.module.css'
+
+export const temp_data = [
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+  {
+    productImage:"https://www.toroid.in/cdn/shop/files/20220407084528_IMG_1670-min.png?v=1696239846",
+    hoverImage:"https://5.imimg.com/data5/SELLER/Default/2021/3/JF/BR/AX/92787722/electric-bicycle-500x500.jpeg",
+    productName : 'CYCLE 2000w ADULT',
+    category:'Electronics',
+    price:12000,
+    rating:3,
+  },
+]
 
 function Home() {
   return (
-    <div>
-       home page
+    <div className={classes.main}>
+      { temp_data.map((product)=>{
+       return <ProductCard product={product}/>
+      })  
+      }
     </div>
   )
 }

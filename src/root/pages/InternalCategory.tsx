@@ -1,10 +1,16 @@
-import React from 'react'
+
+import ProductCard from '@/components/shared/ProductCard/ProductCard'
+import { temp_data } from './Home'
+import classes from "./Home.module.css"
 
 function InternalCategory() {
   return (
-    <div>
-     sub category
-    </div>
+    <div className={classes.main}>
+    { temp_data.map((product)=>{
+     return <ProductCard product={product}/>
+    })  
+    }
+  </div>
   )
 }
 

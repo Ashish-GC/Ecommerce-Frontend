@@ -1,10 +1,15 @@
-import React from 'react'
+import ProductCard from "@/components/shared/ProductCard/ProductCard"
+import { temp_data } from "./Home"
+import classes from './Home.module.css'
 
 function ProductsByCategory() {
   return (
-    <div>
-      product by category name
-    </div>
+    <div className={classes.main}>
+    { temp_data.map((product)=>{
+     return <ProductCard product={product}/>
+    })  
+    }
+  </div>
   )
 }
 

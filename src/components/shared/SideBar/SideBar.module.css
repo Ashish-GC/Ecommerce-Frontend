@@ -15,7 +15,7 @@
   .sidebarModal::backdrop{
     background-color: rgba(0, 0, 0, 0.5);
 }
-
+ .sidebarModal a:focus{    outline: none;}
   
   @keyframes slide-in {
     from {
@@ -38,13 +38,15 @@
  flex: 5%;
  position:sticky;
  min-height: 3rem;
+ display: flex;
+ justify-content: center;
 }
 .user a{
     height: 100%;
-    display: flex;
-    justify-content: center;
+   display: flex;
+   gap: 10px;
+   justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 
 
