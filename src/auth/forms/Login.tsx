@@ -13,29 +13,52 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { toast } from "@/components/ui/use-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LuEye } from "react-icons/lu";
 import { LuEyeOff } from "react-icons/lu";
-import { useState } from "react";
-import { bannerImage } from "@/constants";
+import { useState,useContext } from "react";
+import { loginUserQuery } from "@/lib/react-query/queriesAndMutation";
+import { Loader2 } from "lucide-react";
+import { userContext } from "@/context/UserContext";
+
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const {setUser,setIsAuthenticated} = useContext(userContext)
+
+  const {mutateAsync:loginUser,isPending,isError,error}=loginUserQuery();
+
+   const navigate=useNavigate()
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      user: "",
+      creator: "",
       password: "",
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: "You submitted the following values:",
-    });
-    console.log(data);
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+       const response= await loginUser(data);
+
+       if(!response){
+        throw new Error("unable to login")
+       }
+
+       // set  access tokens 
+         localStorage.setItem("accessToken",response.accessToken) 
+
+       // store user data in user context for authorization
+              setUser(response.user)
+              setIsAuthenticated(true)
+              
+       //reset form 
+       form.reset();
+
+       // navigate to home 
+        navigate("/")
+        
+
   }
 
   const saveUserDetailsHandler = () => {
@@ -44,17 +67,9 @@ function Login() {
 
   return (
     <>
-      <div className={classes.banner}>
-        <img src={bannerImage} alt="Banner Image" />
-        <div className={classes.bannerContent}>
-          <h1 className="text-sm md:text-xl  font-semibold">My account</h1>
-          <Link to="/">
-            <p className="text-xs lg:ext-sm  hover:underline">Home</p>
-          </Link>
-        </div>
-      </div>
+    
       <h1 className="mt-2 text-base text-center md:text-2xl  font-semibold">
-        Login/Register
+        Login
       </h1>
 
       <div className={classes.main}>
@@ -66,7 +81,7 @@ function Login() {
           <form onSubmit={form.handleSubmit(onSubmit)} className={classes.form}>
             <FormField
               control={form.control}
-              name="user"
+              name="creator"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>
@@ -145,7 +160,8 @@ function Login() {
               className="bg-red-400 hover:bg-red-500 text-white"
               type="submit"
             >
-              SIGN IN TO YOUR ACCOUNT
+             {!isPending && "SIGN IN TO YOUR ACCOUNT"} 
+             {isPending && <Loader2/>}
             </Button>
           </form>
         </Form>
@@ -172,7 +188,7 @@ export default Login;
 // );
 
 const FormSchema = z.object({
-  user: z.string().min(2, {
+  creator: z.string().min(2, {
     message: "Username or email must be at least 2 characters.",
   }),
   password: z.string().min(2, { message: "Must have at least 2 character" }),

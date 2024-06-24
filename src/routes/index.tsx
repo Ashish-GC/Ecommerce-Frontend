@@ -11,6 +11,7 @@ import {
 } from "../root/pages";
 import ErrorPage from "../components/shared/Error/ErrorPage";
 import LostPassword from "@/auth/forms/LostPassword";
+import VerifyEmail from "@/auth/forms/VerifiyEmail";
 
 export const routes = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ export const routes = createBrowserRouter([
         children: [
           { path: "/my-account/login", element: <Login /> },
           { path: "/my-account/register", element: <Register /> },
+          {path:"/my-account/verify-code/:userId" , element:<VerifyEmail/>},
           {path:"/my-account/lost-password",element:<LostPassword/>}
         ],
       },

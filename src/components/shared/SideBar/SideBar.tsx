@@ -53,6 +53,7 @@ function SideBar() {
               const categoryUrl = category.categoryName.replace(/\s+/g, "-");
               return (
                 <div
+                 key={category.categoryName}
                   className={`${
                     category.categoryName === subCategory
                       ? classes.categoryColor
@@ -80,7 +81,7 @@ function SideBar() {
                   </div>
                   {subCategory === category.categoryName && (
                     <ul className={classes.subCategory}>
-                      {category.subCategories.map((subCategory: any) => {
+                      {category.subCategories.map((subCategory: any,index) => {
                         const categoryUrl = category.categoryName.replace(
                           /\s+/g,
                           "-"
@@ -88,7 +89,7 @@ function SideBar() {
                         const subCategoryUrl =
                           subCategory.subCategoryName.replace(/\s+/g, "-");
                         return (
-                          <li>
+                          <li key={index}>
                             <NavLink
                               className={({ isActive }): string =>
                                 `${isActive && "text-red-500"} `

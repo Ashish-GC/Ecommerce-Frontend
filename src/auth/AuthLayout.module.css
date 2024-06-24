@@ -8,3 +8,27 @@
    position: relative;
    margin-bottom: 2rem;
 }
+
+.banner{
+    width: 100%;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    }
+.banner img{
+    object-fit:fill;
+    min-height: 6.5rem;
+    max-height: 8rem;
+    width: 100%;
+}
+
+.bannerContent{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+} 

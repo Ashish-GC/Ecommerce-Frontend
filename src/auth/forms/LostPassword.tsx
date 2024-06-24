@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/form";
 import { toast } from "@/components/ui/use-toast";
 import { Link } from "react-router-dom";
-import { bannerImage } from "@/constants";
+
 
 function LostPassword() {
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -34,22 +34,7 @@ function LostPassword() {
 
   return (
     <>
-      <div className={classes.banner}>
-        <img src={bannerImage} alt="Banner Image" />
-        <div className={classes.bannerContent}>
-          <h1 className="text-sm md:text-xl  font-semibold">Lost Password</h1>
-          <div className="flex gap-1 items-center">
-          <Link to="/">
-            <p className="text-xs lg:ext-sm  hover:underline">Home</p>
-          </Link>
-          <p>{`>`}</p>
-          <Link to="/my-account/login">
-            <p className="text-xs lg:ext-sm  hover:underline">My account</p>
-          </Link>
-          </div>
-          
-        </div>
-      </div>
+     
       <h1 className="mt-2 text-base text-center md:text-2xl  font-semibold">
         Login/Register
       </h1>

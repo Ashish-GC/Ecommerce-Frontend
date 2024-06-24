@@ -1,5 +1,8 @@
 import ProductCard from '@/components/shared/ProductCard/ProductCard'
 import classes from './Home.module.css'
+import { useContext, useEffect } from 'react'
+import axios from 'axios'
+import { userContext } from '@/context/UserContext'
 
 export const temp_data = [
   {
@@ -125,10 +128,11 @@ export const temp_data = [
 ]
 
 function Home() {
+
   return (
     <div className={classes.main}>
-      { temp_data.map((product)=>{
-       return <ProductCard product={product}/>
+      { temp_data.map((product,index)=>{
+       return <ProductCard key={index} product={product}/>
       })  
       }
     </div>

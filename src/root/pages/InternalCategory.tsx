@@ -6,8 +6,8 @@ import classes from "./Home.module.css"
 function InternalCategory() {
   return (
     <div className={classes.main}>
-    { temp_data.map((product)=>{
-     return <ProductCard product={product}/>
+    { temp_data.map((product,index)=>{
+     return <ProductCard key={index} product={product}/>
     })  
     }
   </div>

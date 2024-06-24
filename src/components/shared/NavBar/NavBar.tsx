@@ -16,12 +16,13 @@ function NavBar() {
         </li>
         <li className="flex-[30%] flex justify-center ">
         <Link to="/">
-          <img
+          {/* <img
             className="max-h-[40px] w-auto"
-            src="//showict.com/wp-content/uploads/2024/05/showict3.png"
+            src="//showic.com/wp-content/uploads/2024/05/showict3.png"
             alt="Showict"
             srcSet="//showict.com/wp-content/uploads/2024/05/showict3.png 1x, //showict.com/wp-content/uploads/2024/05/showict3.png 2x"
-          />
+          /> */}
+          shopping
          </Link>
         </li>
         <li className="flex-[35%] flex justify-end ">
