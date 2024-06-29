@@ -28,7 +28,8 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
   const { mutateAsync: getCurrentUser } = getCurrentUserQuery();
 
   const authenticateUser = async () => {
-    if (localStorage.getItem("accessToken") != "") {
+    if (localStorage.getItem("accessToken") != null) {
+      console.log(localStorage.getItem("accessToken"))
       // get current user
             const curr_user =await getCurrentUser();
             
